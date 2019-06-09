@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'DS Greece';
+	src: url('../fonts/ds_greece.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/ds_greece.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/ds_greece.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/ds_greece.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/ds_greece.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/ds_greece.svg#ds_greece') format('svg'); /* Chrome < 4, Legacy iOS */
+}

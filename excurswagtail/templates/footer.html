@@ -1,0 +1,162 @@
+{% load static wagtailuserbar %}
+{%load wagtailcore_tags%}
+
+<footer id="contact" class="theme-footer-one">
+    <div class="am__pattern-why"></div>	
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 about-widget">
+                    <div class="f-logo">
+                        <img src="{% static 'img/logo/logo.png' %}" alt="{{page.home_title}}"> 
+                    </div>
+                    <p>{{f_desc}}</p>
+                    <div class="queries">
+                        <ul>
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <a href="tel:+{{f_tel}}">+ {{ f_tel}}</a>
+                        </li>
+                        <li>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                {{ f_adr}}
+                        </li>
+                        <li>
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <a href="mailto:demo@gmail.com">demo@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.footer-recent-post -->
+            
+                <!-- /.about-widget -->
+                <div class="col-lg-3 col-sm-6 footer-recent-post">
+                    <h6 class="title">Новые экскурсии</h6>
+                    <ul>
+                        <li class="d-flex">
+                            <img src="img/blog/f1.png" alt="" class="float-left">
+                            <div class="post float-left">
+                                <a href="blog-details-right.html">Сафари-парк в Туапсе</a>
+                                <div class="date">Фев 16, 2019</div>
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                            <img src="img/blog/f2.png" alt="" class="float-left">
+                            <div class="post float-left">
+                                <a href="blog-details-right.html">Музей искусств в Краснодаре</a>
+                                <div class="date"> Мар 03, 2019</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.footer-list -->
+                <div class="col-lg-3 col-sm-6 footer-newsletter">
+                    <h6 class="title">Instagram</h6>
+                    <div class="row">
+                        <div class="col-md-4 col-4 item">
+                            <img class="insta img-fluid" src="img/footer/ins-1.png" alt="">
+                        </div>
+                        <div class="col-md-4 col-4 item">
+                            <img class="insta img-fluid" src="img/footer/ins-2.png" alt="">
+                        </div>
+                        <div class="col-md-4 col-4 item">
+                            <img class="insta img-fluid" src="img/footer/ins-3.png" alt="">
+                        </div>
+                        <div class="col-md-4 col-4 item">
+                            <img class="insta img-fluid" src="img/footer/ins-3.png" alt="">
+                        </div>
+                        <div class="col-md-4 col-4 item">
+                            <img class="insta img-fluid" src="img/footer/ins-2.png" alt="">
+                        </div>
+                        <div class="col-md-4 col-4 item">
+                            <img class="insta img-fluid" src="img/footer/ins-1.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="social-link">
+                                <span>Мы в соц. сетях : </span>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.top-footer -->
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center ">
+                    <p>&copy; Copyrights | {{f_title}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.bottom-footer -->
+</footer>
+<div class="totop">
+		<a href="#top"><i class="fa fa-arrow-up"></i></a>
+	</div>
+	<!--End ClickToTop-->
+    </div>
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                        <h5 class="modal-title" id="exampleModalLabel">Ближайшие<span>экскурсии</span></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="am__modal-list">
+                            <li class="d-flex">
+                                <i class="fa fa-dot-circle-o"></i>
+                                <div class="post float-left">
+                                    <a href="excursion-one.html">Грязевой вулкан Тиздар</a>
+                                    <div class="date">Июль 16, 2019</div>
+                                </div>
+                                <div class="circle am__modal-discount">
+                                    <span>10%</span>
+                                </div>
+                            </li>
+                            <li class="d-flex">
+                                <i class="fa fa-dot-circle-o"></i>
+                                <div class="post float-left">
+                                    <a href="excursion-one.html">Лечебная грязь в Анапе</a>
+                                    <div class="date"> Август 03, 2019</div>
+                                </div>
+                                <div class="circle am__modal-discount">
+                                    <span>10%</span>
+                                </div>
+                            </li>
+                            <li class="d-flex">
+                                <i class="fa fa-dot-circle-o"></i>
+                                <div class="post float-left">
+                                    <a href="excursion-one.html">Музей искусств в Краснодаре</a>
+                                    <div class="date"> Мар 03, 2019</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>

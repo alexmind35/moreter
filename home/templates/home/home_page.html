@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% load static %}
+{%load wagtailcore_tags%}
+{%load wagtailimages_tags%}
+
+
+{% block content %}
+<div id="banner" style="height: 100vh;position: relative;background: url({% static 'img/main/main-bg.jpg' %}) no-repeat center;background-size: cover;">
+    <!-- <img src="img/main/map.png" alt="" class="am__main_map" data-wow-delay="0.5s"> -->
+    <!-- <div class="overly am__overlay"></div> -->
+    <div class="container">
+        
+            <div class="row justify-content-center align-items-center main__row">
+                    <div class="col-lg-5">
+                            <img class="img-fluid am__main-img" src="{% static 'img/main/ekskursii-v-Anape.png' %}" alt="Экскурсии в Анапе">
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="banner_info am__banner_info">
+                                <article>
+                                    <h2>Устали от пляжного отдыха?</h2>
+                                    <h1><span>Экскурсии в</span> Анапе</h1>
+                                    <p>{{page.home_description}}</p>
+                                </article>
+                        </div>
+                    </div>
+            </div>
+                        
+    
+        
+        <div class="row justify-content-center align-items-center am__excurs-today">
+                <div class="col-lg-4 am__recent-post">
+                        <h4 class="title text-center">Ближайшие экскурсии:</h4>
+                        <ul>
+                                {% for entry in blog_excurs%}
+                            <li class="d-flex">
+                                <i class="fa fa-dot-circle-o"></i>
+                                <div class="post float-left">
+                                    <a href="{%pageurl entry%}">{{ entry.title }}</a>
+                                    <div class="date">{{entry.blog_date}}</div>
+                                </div>
+                                {% if entry.blog_discount %}
+                                <div class="circle">
+                                    <span>{{entry.blog_discount }}</span>
+                                </div>
+                                {%endif%}
+                            </li>
+                            {%endfor%}
+                        </ul>
+                    </div>
+                    <div class="col-lg-8 am__recent-post">
+                        <img class="img-fluid" src="{% static 'img/main/map.png' %}" alt="">
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<section id="choose-us" class="am__choose">
+        <div class="am__pattern-why"></div>	
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-md-10 text-center">
+                    <h2 class="section-heading">Почему нам доверяют?</h2>
+                    <p class="section-paragraph">Мы собрали несколько критериев от наших довольных клиентов.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                    <div class="c-box text-center">
+                        <div class="icon">
+                            <img class="img-fluid" src="{% static 'img/why/Produmannye-marshruty.svg' %}" alt="Продуманные маршруты">
+                        </div>
+                        <h4>Продуманные маршруты</h4>
+                        <p>Мы ценим ваше время, поэтому подбираем туры с максимальными впечатлениями.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 am__border_left" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+                    <div class="c-box text-center">
+                        <div class="icon">
+                            <img class="img-fluid" src="{% static 'img/why/Interesnye-gidy.svg' %}" alt="Интересные гиды">
+                        </div>
+                        <h4>Интересные гиды</h4>
+                        <p>Наши гиды увлекательно рассказывают, внимательно слушают и отвечают на ваши вопросы</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+                    <div class="c-box text-center">
+                        <div class="icon">
+                            <img class="img-fluid am__busdriver" src="{% static 'img/why/opytnye-voditeli.svg' %}" alt="Опытные водители">
+                        </div>
+                        <h4>Опытные водители</h4>
+                        <p>Наши водители имееют приличный водительский стаж, всегда приветливы и слушают прекрасную музыку в стиле "Шансон"</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6  am__border_left" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
+                    <div class="c-box text-center">
+                        <div class="icon">
+                            <img class="img-fluid" src="{% static 'img/why/dostupnye-ceny.svg' %}" alt="Доступные цены">
+                        </div>
+                        <h4>Доступные цены</h4>
+                        <p>Наши доступны для всех! Мы не делим людей на категории. Любой желающий может записаться на экскурсию</p>
+                    </div>
+                </div>
+    
+            
+
+        
+                
+            </div>
+            
+        </div>
+        
+    </section>
+    <section id="popular_turs">
+			<div class="am-overly"></div>
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-7 col-md-10 text-center">
+						<h2 class="section-heading">Популярные экскурсии</h2>
+						<p class="section-paragraph">Самые популяные экскурсии из Анапы.</p>
+					</div>
+				</div>
+				<div class="row tur-slider">
+                        {% for entry in blog_popular%}
+                        {% if entry.blog_popular %}
+					<div class="col-lg-4">
+						<div class="c-box">
+							<div class="img">
+                                
+                                {% image entry.blog_img width-360 class="img-fluid" %}
+							</div>
+							<article>
+								<h4>{{ entry.title }}</h4>
+								<div class="b-c">
+										<ul>
+												<li>
+														<i class="fa fa-calendar"></i> {{entry.blog_date}}
+												</li>
+												<li><span class="span">|</span></li>
+												<li>
+														<i class="fa fa-clock-o"></i> {{entry.blog_duration}}
+												</li>
+										</ul>
+								</div>
+								<p>{{entry.blog_description}}</p>
+								<div class="footer d-flex justify-content-between">
+									<a href="{%pageurl entry%}">Подробнее</a>
+									<span class="align-self-center">{{entry.blog_price}} ₽</span>
+								</div>
+							</article>
+						</div>
+                    </div>
+                    {%endif%}
+                    {%endfor%}
+				</div>
+			</div>
+        </section>
+        <section id="popular_destinations">
+                <div class="am__pattern-why"></div>	
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7 col-md-10 text-center">
+                            <h2 class="section-heading">Популярные туры</h2>
+                            <p class="section-paragraph">Самые популяные туры из Анапы</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                            {% for entry in tour_popular%}
+                            {% if entry.tour_popular %}
+                  <div class="col-lg-6 col-sm-6 p-0 mr-px-15" data-aos="fade-down-right" data-aos-duration="3000">
+                                    <div class="c-box">
+                                            <div class="img">
+                                                <a href="{%pageurl entry%}"> {% image entry.tour_img width-560 class="img-fluid" %}</a>
+                                            </div>
+                                            <article>
+                                                <div class="footer d-flex justify-content-between">
+                                                    <div>
+                                                        <h3><a href="{%pageurl entry%}"><span><i class="fa fa-map-marker"></i> {{ entry.title }}</span></a></h3>
+                                                    </div>
+                                                    <p class="align-self-center"><span>3</span></p>
+                                                </div>
+                                            </article>
+                                    </div>
+                  </div>
+                  {%endif%}
+                  {%endfor%}
+                          
+                        </div>
+                </div>
+            </section>
+{% endblock content %}

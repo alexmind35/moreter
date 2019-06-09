@@ -1,0 +1,111 @@
+{% load static wagtailuserbar %}
+{%load wagtailcore_tags%}
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="{{page.home_description}}"/>
+        <meta name="keywords" content="Экскурсии, туры, крым, абхазия, абрау-дюрсо, тамань, голубицкая, ялта"/>
+        <meta name="author" lang="ru" content="Александр Михайлов"/>
+        <meta property="og:title" content="{{page.home_title}}"/>
+        <meta property="og:description" content="{{page.home_description}}"/>
+        <meta property="og:image" content="{% static 'img/logo/logo.png' %}"/>
+    
+        <link rel="apple-touch-icon" sizes="152x152" href="{% static 'img/logo/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/logo/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/logo/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'img/logo/site.webmanifest' %}">
+        <link rel="mask-icon" href="{% static 'img/logo/safari-pinned-tab.svg' %}" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/blogexcurs.css' %}">
+        <!--Bootstrap Stylesheet-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/aos.css' %}">
+        <!--Owl Carousel Stylesheet-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/plugins/owl.carousel.min.css' %}">
+        <!--Slick Slider Stylesheet-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/plugins/slick-theme.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/plugins/slick.css' %}">
+        <!--Font Awesome Stylesheet-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+        <!--Animate Stylesheet-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/plugins/animate.css' %}">
+        <!--Main Stylesheet-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/packeg.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/vahicles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bc.css' %}">
+        <!--Responsive Stylesheet-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/homePageResponsive.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/otherPageResponsive.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/alexkit.css' %}">
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+
+        <script type="application/ld+json">
+            {
+                "@context" : "http://schema.org",
+                "@type" : "LocalBusiness",
+                "name" : "{{page.home_title}}",
+                "image" : "{% static 'img/logo/logo.svg' %}",
+                "telephone" : "+79189445727",
+                "address" : {
+                    "@type" : "PostalAddress",
+                    "streetAddress" : "ул.Шевченко, 18 корпус2",
+                    "addressLocality" : "Анапа"
+                }
+            }
+            </script>
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        
+        {% wagtailuserbar %}
+        {%include 'navbar.html'%}
+            
+
+        {% block content %}
+        
+        {% endblock %}
+        {%include 'footer.html'%}
+
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/blogexcurs.js' %}"></script>
+
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
+        <script src="{% static 'js/jquery.2.1.2.min.js' %}"></script>
+        <!--Bootstrap JS-->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/aos.js' %}"></script>
+        <!--Counter JS-->
+        <script src="{% static 'js/plugins/waypoints.js' %}"></script>
+        <script src="{% static 'js/plugins/jquery.counterup.min.js' %}"></script>
+        <!--Owl Carousel JS-->
+        <script src="{% static 'js/plugins/owl.carousel.min.js' %}"></script>
+    
+        <!--Main-->
+        <script src="{% static 'js/custom.js' %}"></script>
+        <script src="{% static 'js/alexkit.js' %}"></script>
+    </body>
+</html>

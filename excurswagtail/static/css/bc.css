@@ -1,0 +1,29 @@
+#breadcrumb{
+  position: relative;
+  background: url(../img/banner/banner1.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 220px 0px 149px;
+}
+.overly {
+  background: rgba(0, 0, 0, 0.85);
+}
+#breadcrumb h2,
+#breadcrumb a,
+#breadcrumb span{
+  color: #fff;
+}
+#breadcrumb h2{
+  margin-bottom: 20px;
+}
+#breadcrumb a{
+  font-size: 18px;
+  font-weight: 400;
+}
+#breadcrumb .active{
+ color: #1248b9;
+}
+#breadcrumb span {
+  display: inline-block;
+  padding: 0px 5px;
+}

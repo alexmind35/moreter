@@ -1,0 +1,39 @@
+{% load static %}
+{%load wagtailcore_tags%}
+{%load wagtailimages_tags%}
+
+
+<div id="body-wrap">
+      <div id="main-menu">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="/">
+              <img class="am__logo" src="{% static 'img/logo/logo.png' %}" alt="{{page.home_title}}">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+              <ul class="navbar-nav ml-auto">
+                  {% for menu in menuitems %}
+             
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{{menu.url}}">{{menu.title}}</a>
+                  </li>
+          {% endfor %}
+                   
+                </ul>
+              
+            </div>
+            <a data-aos="new-animation" data-aos-duration="3000" class="am__phone-btn" href="tel:+{{page.home_telephone}}"><i class="fa fa-phone"></i></a>
+            <a class="am__phone-btn whatsapp" href="tel:+1234567900"><i class="fa fa-whatsapp"></i></a>
+            <a class="am__phone-btn calendar" data-toggle="modal" data-target=".bd-example-modal-sm"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+  
+          </div>
+        </nav>
+      </div>
+
+      
